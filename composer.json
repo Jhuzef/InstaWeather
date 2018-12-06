@@ -1,0 +1,6 @@
+{
+    "require": {
+        "mgp25/instagram-php": "^5.0",
+        "vlucas/phpdotenv": "^2.5"
+    }
+}
