@@ -19,9 +19,9 @@ class Main  {
         $currentWeather = Weather::GetCurrentWeather($weather);
 
         $message = Message::Current($currentWeather);
-        print $message;
+
         $user = Instagram::Login(getenv('USERNAME'), getenv('PASSWORD'));
-        #Instagram::SendMessage($user, $recipients, $message);
+        Instagram::SendMessage($user, $recipients, $message);
     }
 }
 

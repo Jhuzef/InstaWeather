@@ -2,12 +2,13 @@
 
 class Weather {
     public static function Call(string $key) {
-        $url = 'http://api.openweathermap.org/data/2.5/forecast?id=5101334&APPID=' . $key;
+        $url = 'https://api.openweathermap.org/data/2.5/weather?zip=07043,us&APPID=' . $key;
         $array = json_decode(file_get_contents($url), true);
+
         return $array;
     }
     public static function GetCurrentWeather(Array $data) {
-        return Weather::KelvinToFahrenheit($data['list'][36]['main']['temp']) . '°F';
+        return Weather::KelvinToFahrenheit($data['main']['temp']);
     }
 
     public static function KelvinToFahrenheit(int $kelvin) {
