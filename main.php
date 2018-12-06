@@ -1,9 +1,9 @@
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/Class/Instagram.hphp';
-require __DIR__ . '/Class/Message.hphp';
-require __DIR__ . '/Class/Weather.hphp';
+require __DIR__ . '/Class/Instagram.php';
+require __DIR__ . '/Class/Message.php';
+require __DIR__ . '/Class/Weather.php';
 
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
@@ -21,7 +21,7 @@ class Main  {
         $message = Message::Current($currentWeather);
         print $message;
         $user = Instagram::Login(getenv('USERNAME'), getenv('PASSWORD'));
-        Instagram::SendMessage($user, $recipients, $message);
+        #Instagram::SendMessage($user, $recipients, $message);
     }
 }
 
