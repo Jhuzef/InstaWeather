@@ -6,7 +6,9 @@ require __DIR__ . '/Class/Message.php';
 require __DIR__ . '/Class/Weather.php';
 
 $dotenv = new Dotenv\Dotenv(__DIR__);
-$dotenv->load();
+if(file_exists(".env")) {
+    $dotenv->load();
+}
 
 Main::Start(getenv('API_KEY'));
 
